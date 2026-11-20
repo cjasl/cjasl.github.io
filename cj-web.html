@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="GROVE STREET // CJASL — Concrete logic, zero compromise. Systems & arbitrage, telemetry, and terminal simulation.">
+  <title>GROVE STREET // CJASL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cj-web.css">
+</head>
+<body>
+
+  <!-- Canvas for perspective grid -->
+  <canvas id="grid-canvas" aria-hidden="true"></canvas>
+
+  <!-- Scanline overlay -->
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- Radial vignette -->
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- Main content -->
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-left">
+        <span class="status-beacon" aria-label="Live status: active"></span>
+        <span class="brand-title">CJASL // SECTOR_07</span>
+      </div>
+      <div class="header-right">
+        <button id="audio-toggle" class="audio-btn" aria-label="Toggle ambient audio" type="button">[SOUND: OFF]</button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="glitch-title" data-text="GROVE STREET">GROVE STREET</h1>
+      <p class="tagline">CONCRETE LOGIC // ZERO COMPROMISE</p>
+      <blockquote class="sub-quote">"Home. At least it was before I fucked everything up."</blockquote>
+    </section>
+
+    <!-- Bento / Specs grid -->
+    <section class="bento-grid" aria-label="System specifications">
+
+      <!-- Card 1: Core Directives -->
+      <article class="bento-card neon-border">
+        <h2 class="card-heading">// CORE DIRECTIVES</h2>
+        <dl class="spec-list">
+          <div class="spec-row">
+            <dt>System</dt>
+            <dd>UNIX / MAC ARCH</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Domain</dt>
+            <dd>SYSTEMS &amp; ARBITRAGE</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Thermodynamics</dt>
+            <dd>M-CYCLE OPTIMIZED</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Philosophy</dt>
+            <dd>NOTHING MORE PERMANENT THAN A WORKING FIX</dd>
+          </div>
+        </dl>
+      </article>
+
+      <!-- Card 2: Telemetry -->
+      <article class="bento-card neon-border">
+        <h2 class="card-heading">// TELEMETRY</h2>
+        <dl class="spec-list">
+          <div class="spec-row">
+            <dt>Session Uptime</dt>
+            <dd id="uptime-display">00:00:00</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Geo Loc</dt>
+            <dd>GACHSARAN // BUSHEHR</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Encryption</dt>
+            <dd>AES-256 GCM</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Status</dt>
+            <dd>SIX-GEARED</dd>
+          </div>
+        </dl>
+      </article>
+
+    </section>
+
+    <!-- Terminal Simulator Box -->
+    <section class="terminal-section" aria-label="Terminal simulator">
+      <div class="terminal-window neon-border">
+        <!-- macOS style dots -->
+        <div class="terminal-bar">
+          <div class="window-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <span class="terminal-title">sh &mdash; cjasl@grovestreet:~</span>
+        </div>
+        <!-- Terminal log output -->
+        <div class="terminal-body" id="terminal-output" aria-live="polite">
+          <div class="terminal-line">
+            <span class="prompt">cjasl@grovestreet:~$</span>
+            <span class="terminal-text">init --verbose</span>
+          </div>
+          <!-- Lines injected by JS -->
+          <div class="terminal-cursor-line">
+            <span class="prompt">cjasl@grovestreet:~$</span>
+            <span class="cursor" id="terminal-cursor">█</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>CJASL.GITHUB.IO // ALL RIGHTS RESERVED // 2026</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
